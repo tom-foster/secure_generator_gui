@@ -6,8 +6,8 @@ from tkinter import Tk, Label, Button, Entry, IntVar, END, W, E
 class PassGenGUI:
     def __init__(self, master):
         self.master = master
+        self.entered_number = 20
         master.title('Password Secure Generator')
-
         self.label = Label(master, text='Enter')
         self.label.pack()
 
@@ -34,7 +34,7 @@ class PassGenGUI:
         try:
             self.entered_number = int(new_text)
             return True
-        except ValueError:
+        except AttributeError:
             return False
 
     def gen_password(self):
